@@ -14,10 +14,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var answerImgView: UIImageView!
 
-    @IBAction func askBtnClicked(_ sender: UIButton) {
-        //answerImgView.image = ballArray.randomElement()
-    }
-
     override func motionEnded(
         _ motion: UIEvent.EventSubtype, with event: UIEvent?
     ) {
