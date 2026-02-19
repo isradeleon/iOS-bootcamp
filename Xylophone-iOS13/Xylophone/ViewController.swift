@@ -18,12 +18,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func keyPressed(_ sender: UIButton) {
-        playSound()
+        let note = sender.titleLabel?.text
+        playSound(note: note)
     }
  
-    func playSound() {
+    func playSound(note: String?) {
         guard let url = Bundle.main.url(
-            forResource: "C", withExtension: "wav"
+            forResource: note, withExtension: "wav"
         ) else { return }
 
         do {
