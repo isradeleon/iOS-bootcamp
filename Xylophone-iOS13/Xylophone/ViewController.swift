@@ -18,7 +18,18 @@ class ViewController: UIViewController {
     }
 
     @IBAction func keyPressed(_ sender: UIButton) {
+        sender.layer.removeAllAnimations()
         playSound(note: sender.currentTitle)
+        animatePressedKey(sender: sender)
+    }
+    
+    func animatePressedKey(sender: UIButton) {
+        sender.alpha = 0.5
+        fadeIn(target: sender)
+    }
+    
+    func fadeIn(target: UIView) {
+        UIButton.animate(withDuration: 0.2) { target.alpha = 1 }
     }
  
     func playSound(note: String?) {
