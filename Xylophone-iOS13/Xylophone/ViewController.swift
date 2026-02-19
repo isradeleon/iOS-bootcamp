@@ -32,9 +32,9 @@ class ViewController: UIViewController {
 
             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
 
-            guard let player = player else { return }
-
-            player.play()
+            if (player != nil) {
+                player.play()
+            }
 
         } catch let error {
             print(error.localizedDescription)
