@@ -110,7 +110,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="CGk-eM-woa">
-                                        <rect key="frame" x="0.0" y="380" width="393" height="125.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="380" width="393" height="125.66666666666663"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iu0-uk-boI">
                                                 <rect key="frame" x="0.0" y="0.0" width="97.666666666666671" height="125.66666666666667"/>
