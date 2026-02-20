@@ -10,18 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let softTime = 5
-    let mediumTime = 7
-    let hardTime = 12
+    let boiledEggTimes = [ "Soft": 5, "Medium": 7, "Hard": 12 ]
     
     @IBAction func eggBtnPressed(_ sender: UIButton) {
-        let hardness = sender.currentTitle
+        let hardness = sender.currentTitle!
         
-        switch hardness {
-        case "Soft": print("Cook for \(softTime) minutes.")
-        case "Medium": print("Cook for \(mediumTime) minutes.")
-        case "Hard": print("Cook for \(hardTime) minutes.")
-        default: print("No valid hardness provided.")
+        if let time = boiledEggTimes[hardness] {
+            print("Cook the eggs for \(time) minutes")
+        } else {
+            print("Error with specified egg hardness.")
         }
     }
 }
