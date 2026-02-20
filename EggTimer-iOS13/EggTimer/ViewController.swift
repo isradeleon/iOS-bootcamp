@@ -10,15 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let boiledEggTimes: [ String : Int ] = [ "Soft": 5, "Medium": 7, "Hard": 12 ]
+    @IBOutlet weak var countdownLabel: UILabel!
+    
+    let boiledEggTimes: [ String : Int ] = [ "Soft": 5*60, "Medium": 7*60, "Hard": 12*60 ]
+    var timer: Timer?
     
     @IBAction func eggBtnPressed(_ sender: UIButton) {
-        let hardness = sender.currentTitle!
+        self.countdownLabel.text = "Begin cooking..."
+        timer?.invalidate()
         
-        if let time = boiledEggTimes[hardness] {
-            print("Cook the eggs for \(time) minutes")
-        } else {
-            print("Error with specified egg hardness.")
+        let hardness = sender.currentTitle!
+        var eggCountdown = boiledEggTimes[hardness]!
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            self.countdownLabel.text = "\(eggCountdown) seconds left..."
+            eggCountdown -= 1
+            if eggCountdown == 0 {
+                timer.invalidate()
+            }
         }
     }
 }

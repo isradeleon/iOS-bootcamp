@@ -123,6 +123,18 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJN-th-c5K" userLabel="Timer View">
                                         <rect key="frame" x="0.0" y="568.5" width="374" height="245.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countdown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="H1X-Im-elw">
+                                                <rect key="frame" x="87.5" y="99" width="199" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="H1X-Im-elw" firstAttribute="centerX" secondItem="nJN-th-c5K" secondAttribute="centerX" id="DgS-oB-dCn"/>
+                                            <constraint firstItem="H1X-Im-elw" firstAttribute="centerY" secondItem="nJN-th-c5K" secondAttribute="centerY" id="zc3-zj-WjI"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -136,6 +148,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="wI6-ag-afn" secondAttribute="trailing" id="dky-ZA-Z3J"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="countdownLabel" destination="H1X-Im-elw" id="4Ny-D7-Lhp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
