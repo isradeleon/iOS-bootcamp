@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let boiledEggTimes = [ "Soft": 5, "Medium": 7, "Hard": 12 ]
+    let boiledEggTimes: [ String : Int ] = [ "Soft": 5, "Medium": 7, "Hard": 12 ]
     
     @IBAction func eggBtnPressed(_ sender: UIButton) {
         let hardness = sender.currentTitle!
