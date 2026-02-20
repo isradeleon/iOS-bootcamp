@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var countdownLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     
-    let boiledEggTimes: [ String : Int ] = [ "Soft": 5*60, "Medium": 7*60, "Hard": 12*60 ]
+    let boiledEggTimes: [ String : Int ] = [ "Soft": 10, "Medium": 7*60, "Hard": 12*60 ]
     var timer: Timer?
+    var player: AVAudioPlayer?
     
     @IBAction func eggBtnPressed(_ sender: UIButton) {
         restartCookingProcess()
@@ -32,6 +34,7 @@ class ViewController: UIViewController {
             if eggCountdown == 0 {
                 timer.invalidate()
                 self.countdownLabel.text = "Done!"
+                self.playSound()
             } else {
                 self.countdownLabel.text = "\(eggCountdown) seconds left..."
             }
@@ -53,5 +56,22 @@ class ViewController: UIViewController {
         let elapsedTime = totalTime - countDown
         let percentage = Float(elapsedTime * 100 / totalTime)
         return percentage * 0.01
+    }
+    
+    func playSound() {
+        guard let url = Bundle.main.url(
+            forResource: "alarm_sound", withExtension: "mp3"
+        ) else { return }
+
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            player?.play()
+
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
 }
