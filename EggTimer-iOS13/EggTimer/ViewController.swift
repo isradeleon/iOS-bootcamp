@@ -17,26 +17,33 @@ class ViewController: UIViewController {
     var timer: Timer?
     
     @IBAction func eggBtnPressed(_ sender: UIButton) {
-        self.countdownLabel.text = "Begin cooking..."
-        timer?.invalidate()
+        restartCookingProcess()
         
         let hardness = sender.currentTitle!
         let cookingTime = boiledEggTimes[hardness]!
         var eggCountdown = cookingTime
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            self.countdownLabel.text = "\(eggCountdown) seconds left..."
             self.progressView.progress = self.calculateProgress(
                 totalTime: cookingTime,
                 countDown: eggCountdown
             )
-        
-            eggCountdown -= 1
+            
             if eggCountdown == 0 {
                 timer.invalidate()
                 self.countdownLabel.text = "Done!"
+            } else {
+                self.countdownLabel.text = "\(eggCountdown) seconds left..."
             }
+        
+            eggCountdown -= 1
         }
+    }
+    
+    func restartCookingProcess() {
+        timer?.invalidate()
+        self.countdownLabel.text = "Begin cooking..."
+        self.progressView.progress = 0
     }
     
     func calculateProgress(
