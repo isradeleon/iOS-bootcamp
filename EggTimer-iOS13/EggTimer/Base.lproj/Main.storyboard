@@ -22,9 +22,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9S4-l0-41N" userLabel="Title View">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="245.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose desired cooking level..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="XLm-5r-pSP" userLabel="Title Label">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your desired cooking level..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="XLm-5r-pSP" userLabel="Title Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="245.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -124,16 +124,23 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJN-th-c5K" userLabel="Timer View">
                                         <rect key="frame" x="0.0" y="568.5" width="374" height="245.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countdown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="H1X-Im-elw">
-                                                <rect key="frame" x="87.5" y="99" width="199" height="48"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's cook!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="H1X-Im-elw">
+                                                <rect key="frame" x="128" y="5" width="118" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dMB-rP-YGG">
+                                                <rect key="frame" x="0.0" y="45" width="374" height="4"/>
+                                            </progressView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="dMB-rP-YGG" firstAttribute="centerX" secondItem="nJN-th-c5K" secondAttribute="centerX" id="2Zg-3O-bnE"/>
+                                            <constraint firstItem="H1X-Im-elw" firstAttribute="top" secondItem="nJN-th-c5K" secondAttribute="top" constant="5" id="9Ga-7U-bQ3"/>
                                             <constraint firstItem="H1X-Im-elw" firstAttribute="centerX" secondItem="nJN-th-c5K" secondAttribute="centerX" id="DgS-oB-dCn"/>
-                                            <constraint firstItem="H1X-Im-elw" firstAttribute="centerY" secondItem="nJN-th-c5K" secondAttribute="centerY" id="zc3-zj-WjI"/>
+                                            <constraint firstItem="dMB-rP-YGG" firstAttribute="top" secondItem="H1X-Im-elw" secondAttribute="bottom" constant="10" id="ZvG-cq-sc2"/>
+                                            <constraint firstItem="dMB-rP-YGG" firstAttribute="leading" secondItem="nJN-th-c5K" secondAttribute="leading" id="qZX-uY-of7"/>
+                                            <constraint firstAttribute="trailing" secondItem="dMB-rP-YGG" secondAttribute="trailing" id="zhq-nz-DWs"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -150,6 +157,7 @@
                     </view>
                     <connections>
                         <outlet property="countdownLabel" destination="H1X-Im-elw" id="4Ny-D7-Lhp"/>
+                        <outlet property="progressView" destination="dMB-rP-YGG" id="w5x-x4-79p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
