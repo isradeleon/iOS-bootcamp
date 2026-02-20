@@ -27,6 +27,7 @@ class ViewController: UIViewController {
             eggCountdown -= 1
             if eggCountdown == 0 {
                 timer.invalidate()
+                self.countdownLabel.text = "Done!"
             }
         }
     }
