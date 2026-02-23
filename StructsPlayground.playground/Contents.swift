@@ -3,6 +3,7 @@ struct Town {
     var citizens: [String]
     var statistics: [String: Int]
     
+    // The "this" keyword in Swift is called "self":
     init(name: String, citizens: [String], statistics: [String : Int]) {
         self.name = name
         self.citizens = citizens
@@ -16,12 +17,17 @@ struct Town {
             print("\(citizen) paid \(paidTaxes)")
         }
     }
+    
+    mutating func addCitizen(newCitizen: String) {
+        citizens.append(newCitizen)
+    }
 }
 
-let myTown = Town(
+var myTown = Town(
     name: "Gothic City",
     citizens: ["Batman", "Joker"],
     statistics: ["Gold": 100, "Silver": 1_000, "Sheep": 30_000, "Wool": 100_000]
 )
 
+myTown.addCitizen(newCitizen: "Superman")
 myTown.collectTaxes()
