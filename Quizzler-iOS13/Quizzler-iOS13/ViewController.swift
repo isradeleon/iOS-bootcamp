@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     var currentQuestion = 0
     let quiz = [
         [ "Four + Two is equal to Six.", "True" ],
-        [ "Five - Three is greater than One.", "False" ],
+        [ "Five - Three is greater than One.", "True" ],
         [ "Three + Eight is less than Ten.", "False" ]
     ]
     
@@ -38,10 +38,14 @@ class ViewController: UIViewController {
             print("Wrong!")
         }
         
+        // Here we cycle through the quiz questions
         if currentQuestion < quiz.count-1 {
             currentQuestion += 1
-            refreshQuestionUI()
+        } else {
+            currentQuestion = 0
         }
+        
+        refreshQuestionUI()
     }
 
     func refreshQuestionUI() {
