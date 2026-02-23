@@ -63,6 +63,11 @@ class ViewController: UIViewController {
         questionLabel.text = quiz[currentQuestion].text
         trueBtn.backgroundColor = UIColor.clear
         falseBtn.backgroundColor = UIColor.clear
+        progressBar.progress = calculatePercentage()
+    }
+    
+    func calculatePercentage() -> Float {
+        return Float(currentQuestion+1) * 100.0 / Float(quiz.count) * 0.01
     }
 }
 
