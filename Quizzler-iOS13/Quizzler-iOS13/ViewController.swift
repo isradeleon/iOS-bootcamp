@@ -17,9 +17,9 @@ class ViewController: UIViewController {
     
     var currentQuestion = 0
     let quiz = [
-        [ "Four + Two is equal to Six.", "True" ],
-        [ "Five - Three is greater than One.", "True" ],
-        [ "Three + Eight is less than Ten.", "False" ]
+        Question(text: "Four + Two is equal to Six.", answer: "True"),
+        Question(text: "Five - Three is greater than One.", answer: "True"),
+        Question(text: "Three + Eight is less than Ten.", answer: "False")
     ]
     
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     
     @IBAction func answerPressed(_ sender: UIButton) {
         let userAnswer = sender.currentTitle
-        let correctAnswer = quiz[currentQuestion][1]
+        let correctAnswer = quiz[currentQuestion].answer
         
         if userAnswer == correctAnswer {
             print("Right!")
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     }
 
     func refreshQuestionUI() {
-        questionLabel.text = quiz[currentQuestion][0]
+        questionLabel.text = quiz[currentQuestion].text
     }
 }
 
