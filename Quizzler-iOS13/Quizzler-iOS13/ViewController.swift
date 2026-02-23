@@ -42,9 +42,9 @@ class ViewController: UIViewController {
         let correctAnswer = quiz[currentQuestion].answer
         
         if userAnswer == correctAnswer {
-            print("Right!")
+            sender.backgroundColor = UIColor.systemGreen
         } else {
-            print("Wrong!")
+            sender.backgroundColor = UIColor.systemRed
         }
         
         // Here we cycle through the quiz questions
@@ -54,11 +54,15 @@ class ViewController: UIViewController {
             currentQuestion = 0
         }
         
-        refreshQuestionUI()
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
+            self.refreshQuestionUI()
+        }
     }
 
     func refreshQuestionUI() {
         questionLabel.text = quiz[currentQuestion].text
+        trueBtn.backgroundColor = UIColor.clear
+        falseBtn.backgroundColor = UIColor.clear
     }
 }
 
