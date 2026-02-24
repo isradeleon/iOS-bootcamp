@@ -36,6 +36,7 @@ struct Quiz {
         return questions[currentQuestionIndex]
     }
     
+    // We have to explicitly mark the method as mutating when dealing with STRUCTS
     mutating func nextQuestion() {
         // Here we cycle through the quiz questions list
         if currentQuestionIndex < questions.count-1 {

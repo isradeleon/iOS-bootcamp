@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var trueBtn: UIButton!
     @IBOutlet weak var falseBtn: UIButton!
     
+    // var keyword allows the STRUCT and its PROPERTIES to be mutable
     var quiz = Quiz()
     
     override func viewDidLoad() {
