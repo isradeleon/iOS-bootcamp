@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var trueBtn: UIButton!
     @IBOutlet weak var falseBtn: UIButton!
     
-    let quiz = Quiz()
+    var quiz = Quiz()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,27 +33,17 @@ class ViewController: UIViewController {
             sender.backgroundColor = UIColor.systemRed
         }
         
-        // Here we cycle through the quiz questions
-        if currentQuestion < quiz.count-1 {
-            currentQuestion += 1
-        } else {
-            currentQuestion = 0
-        }
-        
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
+            self.quiz.nextQuestion()
             self.refreshQuestionUI()
         }
     }
 
     func refreshQuestionUI() {
-        questionLabel.text = quiz[currentQuestion].text
+        questionLabel.text = quiz.getCurrentQuestion().text
+        progressBar.progress = quiz.getProgress()
         trueBtn.backgroundColor = UIColor.clear
         falseBtn.backgroundColor = UIColor.clear
-        progressBar.progress = calculatePercentage()
-    }
-    
-    func calculatePercentage() -> Float {
-        return Float(currentQuestion+1) * 100.0 / Float(quiz.count) * 0.01
     }
 }
 

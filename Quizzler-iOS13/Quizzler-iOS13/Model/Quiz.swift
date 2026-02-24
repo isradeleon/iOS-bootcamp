@@ -22,9 +22,26 @@ struct Quiz {
         Question(q: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", a: "True")
     ]
     
-    var currentQuestion = 0
+    private var currentQuestionIndex = 0
     
     func checkAnswer(_ userAnswer: String) -> Bool {
-        return userAnswer == questions[currentQuestion].answer
+        return userAnswer == questions[currentQuestionIndex].answer
+    }
+    
+    func getProgress() -> Float {
+        return Float(currentQuestionIndex+1) * 100.0 / Float(questions.count) * 0.01
+    }
+    
+    func getCurrentQuestion() -> Question {
+        return questions[currentQuestionIndex]
+    }
+    
+    mutating func nextQuestion() {
+        // Here we cycle through the quiz questions list
+        if currentQuestionIndex < questions.count-1 {
+            currentQuestionIndex += 1
+        } else {
+            currentQuestionIndex = 0
+        }
     }
 }
