@@ -23,13 +23,20 @@ struct Quiz {
     ]
     
     private var currentQuestionIndex = 0
+    private var rightAnswers = 0
     
-    func checkAnswer(_ userAnswer: String) -> Bool {
-        return userAnswer == questions[currentQuestionIndex].answer
+    mutating func checkAnswer(_ userAnswer: String) -> Bool {
+        let result = userAnswer == questions[currentQuestionIndex].answer
+        if result { rightAnswers += 1 }
+        return result
     }
     
     func getProgress() -> Float {
         return Float(currentQuestionIndex+1) * 100.0 / Float(questions.count) * 0.01
+    }
+    
+    func getScore() -> Int {
+        return rightAnswers
     }
     
     func getCurrentQuestion() -> Question {
@@ -43,6 +50,7 @@ struct Quiz {
             currentQuestionIndex += 1
         } else {
             currentQuestionIndex = 0
+            rightAnswers = 0
         }
     }
 }

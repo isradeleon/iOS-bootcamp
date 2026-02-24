@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var trueBtn: UIButton!
@@ -43,6 +44,8 @@ class ViewController: UIViewController {
     func refreshQuestionUI() {
         questionLabel.text = quiz.getCurrentQuestion().text
         progressBar.progress = quiz.getProgress()
+        scoreLabel.text = "Score: \(quiz.getScore()) / \(quiz.questions.count)"
+        
         trueBtn.backgroundColor = UIColor.clear
         falseBtn.backgroundColor = UIColor.clear
     }
