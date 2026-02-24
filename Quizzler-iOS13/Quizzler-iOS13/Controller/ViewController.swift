@@ -10,11 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // Quiz indicators
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var trueBtn: UIButton!
-    @IBOutlet weak var falseBtn: UIButton!
+    
+    // Answer buttons
+    @IBOutlet weak var firstBtn: UIButton!
+    @IBOutlet weak var secondBtn: UIButton!
+    @IBOutlet weak var thirdBtn: UIButton!
     
     // var keyword allows the STRUCT and its PROPERTIES to be mutable
     var quiz = Quiz()
@@ -42,12 +46,22 @@ class ViewController: UIViewController {
     }
 
     func refreshQuestionUI() {
-        questionLabel.text = quiz.getCurrentQuestion().text
+        let currentQuestion = quiz.getCurrentQuestion()
+        questionLabel.text = currentQuestion.text
+        
+        // Show answer options
+        firstBtn.setTitle(currentQuestion.answers[0], for: .normal)
+        secondBtn.setTitle(currentQuestion.answers[1], for: .normal)
+        thirdBtn.setTitle(currentQuestion.answers[2], for: .normal)
+        
+        // Update progress indicators
         progressBar.progress = quiz.getProgress()
         scoreLabel.text = "Score: \(quiz.getScore()) / \(quiz.questions.count)"
         
-        trueBtn.backgroundColor = UIColor.clear
-        falseBtn.backgroundColor = UIColor.clear
+        // Reset btn colors
+        firstBtn.backgroundColor = UIColor.clear
+        secondBtn.backgroundColor = UIColor.clear
+        thirdBtn.backgroundColor = UIColor.clear
     }
 }
 
