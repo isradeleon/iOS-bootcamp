@@ -18,13 +18,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func sliderValueChange(_ sender: UISlider) {
-        switch sender.accessibilityIdentifier {
-            case "heightSlider": heightLabel.text = String(sender.value)
-            case "weightSlider": weightLabel.text = String(sender.value)
-            default: print("Slider not found")
-        }
+    @IBAction func heightSliderChange(_ sender: UISlider) {
+        let height = String(format: "%.2f", sender.value)
+        heightLabel.text = "\(height)m"
     }
     
+    @IBAction func weightSliderChange(_ sender: UISlider) {
+        let weight = Int(sender.value)
+        weightLabel.text = "\(weight)kg"
+    }
 }
 
