@@ -23,9 +23,9 @@ class ResultsViewController: UIViewController {
     }
     
     func showBMIResults() {
-        bmiLabel.text = bmiResult!
-        adviceLabel.text = bmiAdvice!
-        view.backgroundColor = bmiBgColor!
+        bmiLabel.text = bmiResult
+        adviceLabel.text = bmiAdvice
+        view.backgroundColor = bmiBgColor
     }
     
     @IBAction func recalculatePressed(_ sender: UIButton) {
