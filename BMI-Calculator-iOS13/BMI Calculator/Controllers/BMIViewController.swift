@@ -10,6 +10,8 @@ import UIKit
 
 class BMIViewController: UIViewController {
     
+    var bmiValue: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemRed
@@ -18,8 +20,8 @@ class BMIViewController: UIViewController {
     
     func appendUILabel() {
         let label = UILabel()
-        label.text = "Helloooo"
-        label.frame = CGRect(x: 10, y: 10, width: 100, height: 50)
+        label.text = bmiValue
+        label.frame = CGRect(x: 10, y: 10, width: 200, height: 50)
         view.addSubview(label)
     }
 }

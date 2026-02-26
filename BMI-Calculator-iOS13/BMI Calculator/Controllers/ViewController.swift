@@ -37,6 +37,7 @@ class ViewController: UIViewController {
         let bmi = weight / pow(height, 2)
         
         let bmiVC = BMIViewController()
+        bmiVC.bmiValue = String(format: "Your BMI: %.1f", bmi)
         self.present(bmiVC, animated: true)
     }
 }
