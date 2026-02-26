@@ -29,4 +29,8 @@ if let safeOptional = myOptional {
 myOptional = nil
 print(myOptional ?? "Hello again!")
 
-// 5.
+// 5. Optional Chaining
+var car: Car? = Car()
+
+print("The car has \(car?.doors ?? 0) doors.")
+car?.turnEngineOn() // This line will be skipped if the car is == nil
