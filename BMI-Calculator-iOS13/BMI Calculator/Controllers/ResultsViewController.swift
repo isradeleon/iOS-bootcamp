@@ -9,14 +9,23 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
+    
+    var bmiResult: String?
 
     @IBOutlet weak var bmiLabel: UILabel!
     @IBOutlet weak var adviceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        showBMIResult()
+    }
+    
+    func showBMIResult() {
+        if bmiResult != nil {
+            bmiLabel.text = bmiResult
+        } else {
+            bmiLabel.text = "N / A"
+        }
     }
     
     @IBAction func recalculatePressed(_ sender: UIButton) {
