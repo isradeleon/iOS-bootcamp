@@ -12,6 +12,14 @@ class BMIViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemRed
+        appendUILabel()
     }
     
+    func appendUILabel() {
+        let label = UILabel()
+        label.text = "Helloooo"
+        label.frame = CGRect(x: 10, y: 10, width: 100, height: 50)
+        view.addSubview(label)
+    }
 }
