@@ -1,5 +1,5 @@
 //
-//  BodyMassIndex.swift
+//  BodyMassIndexCalculator.swift
 //  BMI Calculator
 //
 //  Created by Israel Diaz de Leon on 26/02/26.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BodyMassIndex {
+struct BodyMassIndexCalculator {
     private var bmi: Float?
     
     mutating func calculate(

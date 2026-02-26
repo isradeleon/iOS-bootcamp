@@ -10,7 +10,7 @@ import UIKit
 
 class CalculateViewController: UIViewController {
     
-    var bodyMassIndex = BodyMassIndex()
+    var bodyMassIndex = BodyMassIndexCalculator()
 
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
