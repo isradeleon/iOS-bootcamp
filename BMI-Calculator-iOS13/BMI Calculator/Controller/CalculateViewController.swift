@@ -53,6 +53,8 @@ class CalculateViewController: UIViewController {
         case "goToResults":
             let destinationVC = segue.destination as! ResultsViewController
             destinationVC.bmiResult = bodyMassIndex.getBMIResult()
+            destinationVC.bmiAdvice = bodyMassIndex.getBMIAdvice()
+            destinationVC.bmiBgColor = bodyMassIndex.getBMIColorIndicator()
         default:
             print("Navigation error: Segue ID not found.")
         }

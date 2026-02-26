@@ -6,7 +6,7 @@
 //  Copyright © 2026 Angela Yu. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct BodyMassIndexCalculator {
     private var bmi: BMI?
@@ -14,19 +14,36 @@ struct BodyMassIndexCalculator {
     mutating func calculate(
         height: Float, weight: Float
     ) {
-        let result = weight / pow(height, 2)
-        bmi = BMI(
-            value: result, advice: "", color: .systemGreen
-        )
+        let bmiResult = weight / pow(height, 2)
         
-        switch result {
-        case ..<18.5: print("Underweight")
-        case 18.5...24.9: print("Normal")
-        default: print("Overweight")
+        switch bmiResult {
+            case ..<18.5: bmi = BMI(
+                value: bmiResult,
+                advice: "Eat more nutritious food!",
+                color: .systemYellow
+            )
+            case 18.5...24.9: bmi = BMI(
+                value: bmiResult,
+                advice: "Perfect! Your weight is on point.",
+                color: .systemGreen
+            )
+            default: bmi = BMI(
+                value: bmiResult,
+                advice: "Eat less sugar & get to the Gym!",
+                color: .systemRed
+            )
         }
     }
     
     func getBMIResult() -> String {
         return String(format: "%.1f", bmi?.value ?? 0)
+    }
+    
+    func getBMIAdvice() -> String {
+        return bmi?.advice ?? "No se detectaron resultados."
+    }
+    
+    func getBMIColorIndicator() -> UIColor {
+        return bmi?.color ?? .systemBlue
     }
 }
