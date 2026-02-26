@@ -9,7 +9,7 @@
 import Foundation
 
 struct BodyMassIndex {
-    private var bmi: Float = 0.0
+    private var bmi: Float?
     
     mutating func calculate(
         height: Float, weight: Float
@@ -18,6 +18,6 @@ struct BodyMassIndex {
     }
     
     func getBMIResult() -> String {
-        return String(format: "%.1f", bmi)
+        return String(format: "%.1f", bmi ?? 0)
     }
 }
