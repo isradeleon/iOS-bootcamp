@@ -9,14 +9,14 @@
 import UIKit
 
 class CalculateViewController: UIViewController {
+    
+    var bodyMassIndex = BodyMassIndex()
 
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     
     @IBOutlet weak var heightSlider: UISlider!
     @IBOutlet weak var weightSlider: UISlider!
-    
-    var bmi: Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,8 @@ class CalculateViewController: UIViewController {
     @IBAction func calculateBMI(_ sender: UIButton) {
         let height = heightSlider.value
         let weight = weightSlider.value
-        bmi = weight / pow(height, 2)
+        
+        bodyMassIndex.calculate(height: height, weight: weight)
         
         // Calling the performSegue method for navigation
         self.performSegue(withIdentifier: "goToResults", sender: self)
@@ -51,7 +52,7 @@ class CalculateViewController: UIViewController {
         switch segue.identifier {
         case "goToResults":
             let destinationVC = segue.destination as! ResultsViewController
-            destinationVC.bmiResult = String(format: "%.1f", bmi)
+            destinationVC.bmiResult = bodyMassIndex.getBMIResult()
         default:
             print("Navigation error: Segue ID not found.")
         }
