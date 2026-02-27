@@ -37,12 +37,12 @@ struct SplitBillCalculator {
     
     func getBillDetails() -> String {
         return String(
-            format: "%.2f split between %.0f people (with a %.0f%% tip).",
+            format: "$ %.2f split between %.0f people (with a %.0f%% tip).",
             totalWithTip ?? 0, people ?? 0, (tip ?? 0) * 100
         )
     }
     
     func getTotalPerPerson() -> String {
-        return String(format: "%.2f", totalPerPerson ?? 0)
+        return String(format: "$ %.2f", totalPerPerson ?? 0)
     }
 }
