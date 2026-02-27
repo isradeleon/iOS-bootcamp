@@ -19,6 +19,17 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var tipBtn10: UIButton!
     @IBOutlet weak var tipBtn20: UIButton!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupRootViewTapGesture()
+        setupDefaultCalculatorValues()
+    }
+    
+    func setupDefaultCalculatorValues(){
+        splitBillCalculator.setNumberOfPeople(2)
+        splitBillCalculator.setTipPercentage(10)
+    }
+    
     @IBAction func tipChanged(_ sender: UIButton) {
         unselectAllTipBtns()
         sender.isSelected = true
@@ -44,8 +55,12 @@ class CalculateViewController: UIViewController {
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        splitBillCalculator.calculateTotalPerPerson()
-        self.performSegue(withIdentifier: "calculator_to_results", sender: self)
+        let bill = billTextField.text ?? "0"
+        if let total = Float(bill) {
+            splitBillCalculator.setTotal(total)
+            splitBillCalculator.calculateTotalPerPerson()
+            self.performSegue(withIdentifier: "calculator_to_results", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,6 +69,16 @@ class CalculateViewController: UIViewController {
             resultVC.totalPerPerson = splitBillCalculator.getTotalPerPerson()
             resultVC.details = splitBillCalculator.getBillDetails()
         }
+    }
+    
+    func setupRootViewTapGesture() {
+        view.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(rootViewTapped(_:)))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func rootViewTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 }
 
