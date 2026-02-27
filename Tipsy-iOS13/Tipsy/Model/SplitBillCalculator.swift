@@ -10,6 +10,8 @@ struct SplitBillCalculator {
     private var tip: Float?
     private var total: Float?
     private var people: Float?
+    
+    private var totalWithTip: Float?
     private var totalPerPerson: Float?
     
     mutating func setTipPercentage(_ tip: Float) {
@@ -28,8 +30,19 @@ struct SplitBillCalculator {
         if let tip = self.tip, let total = self.total, let people = self.people {
             // Now all optionals are safe within this scope:
             let actualTip = total * tip
-            let totalWithTip = total + actualTip
-            totalPerPerson = totalWithTip / people
+            totalWithTip = total + actualTip
+            totalPerPerson = totalWithTip! / people
         }
+    }
+    
+    func getBillDetails() -> String {
+        return String(
+            format: "%.2f split between %.0f people (with a %.0f%% tip).",
+            totalWithTip ?? 0, people ?? 0, (tip ?? 0) * 100
+        )
+    }
+    
+    func getTotalPerPerson() -> String {
+        return String(format: "%.2f", totalPerPerson ?? 0)
     }
 }
