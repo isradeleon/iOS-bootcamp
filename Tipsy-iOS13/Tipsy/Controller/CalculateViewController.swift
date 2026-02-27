@@ -38,11 +38,22 @@ class CalculateViewController: UIViewController {
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
-        
+        let peopleCount = Int(sender.value)
+        splitCountLabel.text = String(peopleCount)
+        splitBillCalculator.setNumberOfPeople(peopleCount)
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        
+        splitBillCalculator.calculateTotalPerPerson()
+        self.performSegue(withIdentifier: "calculator_to_results", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "calculator_to_results" {
+            let resultVC = segue.destination as! ResultViewController
+            resultVC.totalPerPerson = splitBillCalculator.getTotalPerPerson()
+            resultVC.details = splitBillCalculator.getBillDetails()
+        }
     }
 }
 
