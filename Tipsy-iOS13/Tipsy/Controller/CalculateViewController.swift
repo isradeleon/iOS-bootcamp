@@ -24,10 +24,10 @@ class CalculateViewController: UIViewController {
         sender.isSelected = true
         
         switch sender {
-            case tipBtn0: print("0")
-            case tipBtn10: print("10")
-            case tipBtn20: print("20")
-            default: print("Tip selection error: Unknown button pressed.")
+        case tipBtn0: splitBillCalculator.setTipPercentage(0)
+        case tipBtn10: splitBillCalculator.setTipPercentage(10)
+        case tipBtn20: splitBillCalculator.setTipPercentage(20)
+        default: print("Tip selection error: Unknown button pressed.")
         }
     }
     
