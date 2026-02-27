@@ -10,6 +10,8 @@ import UIKit
 
 class CalculateViewController: UIViewController {
 
+    var splitBillCalculator = SplitBillCalculator()
+    
     @IBOutlet weak var billTextField: UITextField!
     @IBOutlet weak var splitCountLabel: UILabel!
     
@@ -18,7 +20,21 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var tipBtn20: UIButton!
     
     @IBAction func tipChanged(_ sender: UIButton) {
+        unselectAllTipBtns()
+        sender.isSelected = true
         
+        switch sender {
+            case tipBtn0: print("0")
+            case tipBtn10: print("10")
+            case tipBtn20: print("20")
+            default: print("Tip selection error: Unknown button pressed.")
+        }
+    }
+    
+    func unselectAllTipBtns() {
+        tipBtn0.isSelected = false
+        tipBtn10.isSelected = false
+        tipBtn20.isSelected = false
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
