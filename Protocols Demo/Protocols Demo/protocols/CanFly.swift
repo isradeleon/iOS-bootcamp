@@ -6,5 +6,6 @@
 //
 
 protocol CanFly {
+    // Protocol methods are mandatory to implement by default.
     func fly()
 }
