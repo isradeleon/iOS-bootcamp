@@ -24,15 +24,19 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
         executeSearchFieldSearch()
         return true
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        searchField.text = ""
+    }
 
     @IBAction func searchPressed(_ sender: UIButton) {
         executeSearchFieldSearch()
     }
     
     func executeSearchFieldSearch() {
-        searchField.endEditing(true)
         let search = searchField.text
         print(search ?? "Empty field")
+        searchField.endEditing(true)
     }
     
 }
