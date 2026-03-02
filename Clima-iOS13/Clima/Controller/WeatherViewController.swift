@@ -20,24 +20,27 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
         searchField.delegate = self
     }
     
+    @IBAction func searchPressed(_ sender: UIButton) {
+        executeCityWeatherSearch()
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        executeSearchFieldSearch()
+        executeCityWeatherSearch()
         return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         searchField.text = ""
     }
-
-    @IBAction func searchPressed(_ sender: UIButton) {
-        executeSearchFieldSearch()
-    }
     
-    func executeSearchFieldSearch() {
-        let search = searchField.text
-        print(search ?? "Empty field")
+    func executeCityWeatherSearch() {
+        let city = searchField.text!
+        
+        // We close the keyboard & end editing.
         searchField.endEditing(true)
+        
+        // Here we would proceed with the weather logic
+        print(city)
     }
-    
 }
 
