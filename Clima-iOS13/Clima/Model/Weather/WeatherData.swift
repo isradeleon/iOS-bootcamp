@@ -9,4 +9,5 @@
 struct WeatherData: Decodable {
     let name: String
     let main: MainData
+    let weather: [WeatherCondition]
 }
