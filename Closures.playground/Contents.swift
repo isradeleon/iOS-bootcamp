@@ -35,3 +35,8 @@ calculator(n1: 3, n2: 4, operation: { $0 + $1 })
 
 // Finaly, since the closure is at the end, you can extract it from the func call
 calculator(n1: 3, n2: 4) { $0 + $1 } // And this is called a trailing closure
+
+// Example of a closure with the map function
+let array = [1,2,3,4,5]
+array.map { number in number + 1 } // The number param reprents each number to be transformed
+array.map { $0 + 1 } // We can also use this parameters anonymously with the dollar sign $X syntax
