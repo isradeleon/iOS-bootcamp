@@ -1,5 +1,6 @@
 import Foundation
 
+// Calculator function receives a function called operation as a parameter
 func calculator(
     n1: Int,
     n2: Int,
@@ -8,6 +9,7 @@ func calculator(
     return operation(n1, n2)
 }
 
+// A named function that meets the requirements can be pass as such parameter
 func multiply(n1: Int, n2: Int) -> Int {
     return n1 * n2
 }
@@ -15,6 +17,21 @@ func multiply(n1: Int, n2: Int) -> Int {
 let result = calculator(n1: 5, n2: 3, operation: multiply)
 print(result)
 
-calculator(n1: 3, n2: 4) { (n1, n2) -> Int in
-    n1 + n2
-}
+// We can also explicitly express all data types in a closure (anonymous function)
+calculator(n1: 3, n2: 4, operation: { (n1: Int, n2: Int) -> Int in
+    return n1 + n2
+})
+
+// Remove the parameter data types from the closure
+calculator(n1: 3, n2: 4, operation: { (n1, n2) -> Int in
+    return n1 + n2
+})
+
+// Remove return keyword & type since it's inferred from the original func defenition
+calculator(n1: 3, n2: 4, operation: { (n1, n2) in n1 + n2 })
+
+// You can also handle closure's parameters anonymously in swift
+calculator(n1: 3, n2: 4, operation: { $0 + $1 })
+
+// Finaly, since the closure is at the end, you can extract it from the func call
+calculator(n1: 3, n2: 4) { $0 + $1 } // And this is called a trailing closure
