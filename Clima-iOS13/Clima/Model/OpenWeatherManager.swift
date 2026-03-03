@@ -24,13 +24,37 @@ struct OpenWeatherManager {
             let session = URLSession(configuration: .default)
             
             // 3. Give the sessiona task
-            let task = session.dataTask(with: url, completionHandler: handler(data: response: error:))
+            // Passing a named method as parameter for dataTask
+            // let task = session.dataTask(with: url, completionHandler: handler(data: response: error:))
+            let task = session.dataTask(with: url) { data, response, error in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                
+                if let safeData = data {
+                    // let dataString = String(data: safeData, encoding: .utf8)
+                    // print(dataString!)
+                    self.parseJSONData(data: safeData)
+                }
+            }
             
             // 4. Start task (call resume method since they're suspended by default)
             task.resume()
         }
     }
     
+    private func parseJSONData(data: Data) {
+        let jsonDecoder = JSONDecoder()
+        do {
+            let weatherData = try jsonDecoder.decode(WeatherData.self, from: data)
+            print(weatherData.main.temp)
+        } catch {
+            print(error)
+        }
+    }
+    
+    /* Old handler method for dataTask completion handler
     private func handler(data: Data?, response: URLResponse?, error: Error?) {
         if error != nil {
             print(error!)
@@ -42,4 +66,5 @@ struct OpenWeatherManager {
             print(dataString!)
         }
     }
+     */
 }
