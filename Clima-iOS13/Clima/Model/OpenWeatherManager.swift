@@ -48,7 +48,12 @@ struct OpenWeatherManager {
         let jsonDecoder = JSONDecoder()
         do {
             let weatherData = try jsonDecoder.decode(WeatherData.self, from: data)
-            print(weatherData.getConditionIcon())
+            let weather = Weather(
+                city: weatherData.name ?? "",
+                description: weatherData.weather?[0].description ?? "",
+                temp: weatherData.main?.temp ?? 0,
+                condition: weatherData.weather?[0].main ?? Condition.Clear
+            )
         } catch {
             print(error)
         }

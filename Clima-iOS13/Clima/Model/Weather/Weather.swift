@@ -1,18 +1,18 @@
 //
-//  WeatherData.swift
+//  Weather.swift
 //  Clima
 //
-//  Created by Israel Diaz de Leon on 03/03/26.
+//  Created by Israel Diaz de Leon on 04/03/26.
 //  Copyright © 2026 App Brewery. All rights reserved.
 //
 
-struct WeatherData: Decodable {
-    let name: String
-    let main: MainData
-    let weather: [WeatherCondition]
+struct Weather {
+    let city: String
+    let description: String
+    let temp: Float
+    let condition: Condition
     
     func getConditionIcon() -> String {
-        let condition = weather[0].main
         return switch condition {
             case .Thunderstorm: "cloud.bolt.rain"
             case .Drizzle: "cloud.drizzle"
