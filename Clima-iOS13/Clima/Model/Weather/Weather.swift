@@ -12,8 +12,16 @@ struct Weather {
     let temp: Float
     let condition: Condition
     
-    func getConditionIcon() -> String {
-        return switch condition {
+    /**
+     Computed properties are "called" or computed at run time. This makes
+     them work similarly to a function.
+     */
+    var formattedTemp: String {
+        String(format: "%.0f", temp)
+    }
+    
+    var conditionIconName: String {
+        switch condition {
             case .Thunderstorm: "cloud.bolt.rain"
             case .Drizzle: "cloud.drizzle"
             case .Rain: "cloud.rain"
