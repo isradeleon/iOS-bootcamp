@@ -17,7 +17,7 @@ struct Weather {
      them work similarly to a function.
      */
     var formattedTemp: String {
-        String(format: "%.0f", temp)
+        String(format: "%.1f", temp)
     }
     
     var conditionIconName: String {
