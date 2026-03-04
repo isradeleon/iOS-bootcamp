@@ -12,6 +12,8 @@ struct OpenWeatherManager {
     private let baseUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric"
     private let apiKey = "cdbf5d9374361aa56ac4c63e1e82d0d8"
     
+    var delegate: OpenWeatherManagerDelegate?
+    
     func fetchWeather(city: String) {
         let requestUrl = "\(baseUrl)&appid=\(apiKey)&q=\(city)"
         performRequest(urlString: requestUrl)
@@ -24,8 +26,6 @@ struct OpenWeatherManager {
             let session = URLSession(configuration: .default)
             
             // 3. Give the sessiona task
-            // Passing a named method as parameter for dataTask
-            // let task = session.dataTask(with: url, completionHandler: handler(data: response: error:))
             let task = session.dataTask(with: url) { data, response, error in
                 if error != nil {
                     print(error!)
@@ -33,22 +33,28 @@ struct OpenWeatherManager {
                 }
                 
                 if let safeData = data {
+                    if let weather = self.parseJSONWeatherData(data: safeData) {
+                        self.delegate?.onWeatherSearchSuccess(weather: weather)
+                    }
+                    
                     // let dataString = String(data: safeData, encoding: .utf8)
                     // print(dataString!)
-                    self.parseJSONData(data: safeData)
                 }
             }
+            
+            // Passing a named method as parameter for dataTask
+            // let task = session.dataTask(with: url, completionHandler: handler(data: response: error:))
             
             // 4. Start task (call resume method since they're suspended by default)
             task.resume()
         }
     }
     
-    private func parseJSONData(data: Data) {
+    private func parseJSONWeatherData(data: Data) -> Weather? {
         let jsonDecoder = JSONDecoder()
         do {
             let weatherData = try jsonDecoder.decode(WeatherData.self, from: data)
-            let weather = Weather(
+            return Weather(
                 city: weatherData.name ?? "",
                 description: weatherData.weather?[0].description ?? "",
                 temp: weatherData.main?.temp ?? 0,
@@ -56,6 +62,7 @@ struct OpenWeatherManager {
             )
         } catch {
             print(error)
+            return nil
         }
     }
     
