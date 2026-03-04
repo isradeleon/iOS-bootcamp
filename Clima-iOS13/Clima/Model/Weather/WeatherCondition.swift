@@ -7,6 +7,6 @@
 //
 
 struct WeatherCondition: Decodable {
-    let main: String
+    let main: Condition
     let description: String
 }
