@@ -46,7 +46,10 @@ class WeatherViewController
         searchField.endEditing(true)
     }
     
-    func onWeatherSearchSuccess(weather: Weather) {
+    func onWeatherSearchSuccess(
+        manager: OpenWeatherManager,
+        weather: Weather
+    ) {
         DispatchQueue.main.async {
             self.temperatureLabel.text = weather.formattedTemp
             self.cityLabel.text = weather.city
@@ -54,6 +57,10 @@ class WeatherViewController
                 systemName: weather.conditionIconName
             )
         }
+    }
+    
+    func onWeatherSearchFailure(_ error: any Error) {
+        print(error)
     }
 }
 

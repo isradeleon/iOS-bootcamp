@@ -7,5 +7,6 @@
 //
 
 protocol OpenWeatherManagerDelegate {
-    func onWeatherSearchSuccess(weather: Weather)
+    func onWeatherSearchSuccess(manager: OpenWeatherManager, weather: Weather)
+    func onWeatherSearchFailure(_ error: Error)
 }
