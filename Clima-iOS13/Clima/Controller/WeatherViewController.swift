@@ -36,6 +36,10 @@ class WeatherViewController: UIViewController {
         executeCityWeatherSearch()
     }
     
+    @IBAction func locationPressed(_ sender: UIButton) {
+        locationManager.requestLocation()
+    }
+    
     func executeCityWeatherSearch() {
         if let cityName = searchField.text {
             openWeatherManager.fetchWeather(city: cityName)
@@ -87,7 +91,9 @@ extension WeatherViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let mostRecentLocation = locations.last else { return }
         let coordinates = mostRecentLocation.coordinate
-        print("\(coordinates.latitude), \(coordinates.longitude)")
+        openWeatherManager.fetchWeatherByCoordinates(
+            lat: coordinates.latitude, lon: coordinates.longitude
+        )
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {

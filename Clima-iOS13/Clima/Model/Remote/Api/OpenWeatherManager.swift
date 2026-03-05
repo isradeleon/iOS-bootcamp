@@ -19,6 +19,11 @@ struct OpenWeatherManager {
         performRequest(with: requestUrl)
     }
     
+    func fetchWeatherByCoordinates(lat: Double, lon: Double){
+        let requestUrl = "\(baseUrl)&appid=\(apiKey)&lat=\(lat)&lon=\(lon)"
+        performRequest(with: requestUrl)
+    }
+    
     private func performRequest(with urlString: String) {
         // 1. Create a URL object
         if let url = URL(string: urlString) {
