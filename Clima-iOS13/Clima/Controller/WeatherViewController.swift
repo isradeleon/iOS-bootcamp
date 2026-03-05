@@ -15,6 +15,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var openWeatherManager = OpenWeatherManager()
     let locationManager = CLLocationManager()
@@ -30,6 +31,7 @@ class WeatherViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
+        activityIndicator.startAnimating()
     }
     
     @IBAction func searchPressed(_ sender: UIButton) {
@@ -38,10 +40,13 @@ class WeatherViewController: UIViewController {
     
     @IBAction func locationPressed(_ sender: UIButton) {
         locationManager.requestLocation()
+        activityIndicator.startAnimating()
+        searchField.endEditing(true)
     }
     
     func executeCityWeatherSearch() {
         if let cityName = searchField.text {
+            activityIndicator.startAnimating()
             openWeatherManager.fetchWeather(city: cityName)
         }
         
@@ -78,10 +83,12 @@ extension WeatherViewController: OpenWeatherManagerDelegate {
             self.conditionImageView.image = UIImage(
                 systemName: weather.conditionIconName
             )
+            self.activityIndicator.stopAnimating()
         }
     }
     
     func onWeatherSearchFailure(_ error: any Error) {
+        DispatchQueue.main.async { self.activityIndicator.stopAnimating() }
         print(error)
     }
 }
@@ -97,6 +104,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
+        DispatchQueue.main.async { self.activityIndicator.stopAnimating() }
         print(error)
     }
 }
