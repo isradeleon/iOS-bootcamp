@@ -8,8 +8,7 @@
 
 import UIKit
 
-class WeatherViewController
-: UIViewController, UITextFieldDelegate, OpenWeatherManagerDelegate {
+class WeatherViewController: UIViewController {
 
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -28,15 +27,6 @@ class WeatherViewController
         executeCityWeatherSearch()
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        executeCityWeatherSearch()
-        return true
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        searchField.text = ""
-    }
-    
     func executeCityWeatherSearch() {
         if let cityName = searchField.text {
             openWeatherManager.fetchWeather(city: cityName)
@@ -45,7 +35,26 @@ class WeatherViewController
         // We close the keyboard & end editing.
         searchField.endEditing(true)
     }
+}
+
+/**
+ Using extensions for better organized protocol implementations:
+ */
+
+//MARK: - UITextFieldDelegate implementation
+extension WeatherViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        executeCityWeatherSearch()
+        return true
+    }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        searchField.text = ""
+    }
+}
+
+//MARK: - OepnWeatherManagerDelegate implementation
+extension WeatherViewController: OpenWeatherManagerDelegate {
     func onWeatherSearchSuccess(
         manager: OpenWeatherManager,
         weather: Weather
@@ -63,4 +72,3 @@ class WeatherViewController
         print(error)
     }
 }
-
