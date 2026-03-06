@@ -24,13 +24,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="379.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top 3 Cryptocurrencies" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Swn-i9-E4Z">
-                                                <rect key="frame" x="30" y="142" width="333" height="95.666666666666686"/>
+                                                <rect key="frame" x="50" y="142.33333333333334" width="293" height="95"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow the top 3 cryptocurrencies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnD-Cx-3BH">
-                                                <rect key="frame" x="69.000000000000014" y="257.66666666666669" width="255.33333333333337" height="20.333333333333314"/>
+                                                <rect key="frame" x="69" y="257.33333333333331" width="255.33333333333337" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
                                             <constraint firstItem="Swn-i9-E4Z" firstAttribute="centerX" secondItem="X4M-XQ-X2p" secondAttribute="centerX" id="8hM-zE-faw"/>
                                             <constraint firstItem="fnD-Cx-3BH" firstAttribute="centerX" secondItem="X4M-XQ-X2p" secondAttribute="centerX" id="Bof-La-ixV"/>
                                             <constraint firstItem="fnD-Cx-3BH" firstAttribute="top" secondItem="Swn-i9-E4Z" secondAttribute="bottom" constant="20" id="PDv-gQ-qwD"/>
-                                            <constraint firstItem="Swn-i9-E4Z" firstAttribute="leading" secondItem="X4M-XQ-X2p" secondAttribute="leading" constant="30" id="T97-me-sf0"/>
+                                            <constraint firstItem="Swn-i9-E4Z" firstAttribute="leading" secondItem="X4M-XQ-X2p" secondAttribute="leading" constant="50" id="T97-me-sf0"/>
                                             <constraint firstItem="Swn-i9-E4Z" firstAttribute="centerY" secondItem="X4M-XQ-X2p" secondAttribute="centerY" id="UhG-gD-s4f"/>
                                         </constraints>
                                     </view>
@@ -61,13 +61,13 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crypto Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIi-Gs-mHl">
-                                                                <rect key="frame" x="134.33333333333334" y="14.999999999999998" width="124.33333333333334" height="20.333333333333329"/>
+                                                                <rect key="frame" x="134.33333333333334" y="14.666666666666627" width="124.33333333333334" height="20.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaT-Y1-Vk5">
-                                                                <rect key="frame" x="268.66666666666669" y="8" width="124.33333333333331" height="34.333333333333336"/>
+                                                                <rect key="frame" x="268.66666666666669" y="7.6666666666666288" width="124.33333333333331" height="34.333333333333336"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Details"/>
                                                                 <connections>
@@ -86,13 +86,13 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crypto Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AY1-bE-WiB">
-                                                                <rect key="frame" x="134.33333333333334" y="14.999999999999998" width="124.33333333333334" height="20.333333333333329"/>
+                                                                <rect key="frame" x="134.33333333333334" y="14.666666666666627" width="124.33333333333334" height="20.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7s-0W-el1">
-                                                                <rect key="frame" x="268.66666666666669" y="8" width="124.33333333333331" height="34.333333333333336"/>
+                                                                <rect key="frame" x="268.66666666666669" y="7.6666666666666288" width="124.33333333333331" height="34.333333333333336"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Details"/>
                                                                 <connections>
@@ -111,13 +111,13 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crypto Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsS-XO-MJB">
-                                                                <rect key="frame" x="134.33333333333334" y="14.999999999999998" width="124.33333333333334" height="20.333333333333329"/>
+                                                                <rect key="frame" x="134.33333333333334" y="14.666666666666741" width="124.33333333333334" height="20.333333333333329"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJk-ta-5hJ">
-                                                                <rect key="frame" x="268.66666666666669" y="8" width="124.33333333333331" height="34.333333333333336"/>
+                                                                <rect key="frame" x="268.66666666666669" y="7.6666666666667425" width="124.33333333333331" height="34.333333333333336"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Details"/>
                                                                 <connections>
