@@ -17,9 +17,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondCryptoLabel: UILabel!
     @IBOutlet weak var thirdCryptoLabel: UILabel!
     
+    var cryptoApi: CryptoApi?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
+            let keys = NSDictionary(contentsOfFile: path)!
+            cryptoApi = CryptoApi(
+                apiKey: keys["CRYPTO_API_KEY"] as! String
+            )
+        }
     }
 
     @IBAction func cryptoDetailsPressed(_ sender: UIButton) {

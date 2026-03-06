@@ -5,7 +5,7 @@
 //  Created by Israel Diaz de Leon on 06/03/26.
 //
 
-protocol CoinsApiDelegate {
+protocol CryptoApiDelegate {
     func onCryptoTopReady(
         firstCoin: Coin,
         secondCoin: Coin,

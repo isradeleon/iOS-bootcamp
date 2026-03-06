@@ -10,9 +10,9 @@ import Foundation
 struct CryptoApi {
     private let baseUrl = "https://api.freecryptoapi.com/v1/"
     private let client = ApiRequestClient()
-    let apiKey: String
     
-    var delegate: CoinsApiDelegate?
+    let apiKey: String
+    var delegate: CryptoApiDelegate?
     
     func fetchCryptoList() {
         let requestUrl = "\(baseUrl)getCryptoList?token=\(apiKey)"
