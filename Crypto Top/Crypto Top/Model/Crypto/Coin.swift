@@ -10,4 +10,16 @@ struct Coin {
     let currentPrice: Float
     let lowestPrice: Float
     let highestPrice: Float
+    
+    init(
+        name: String,
+        currentPrice: Float = 0.0,
+        lowestPrice: Float = 0.0,
+        highestPrice: Float = 0.0
+    ) {
+        self.name = name
+        self.currentPrice = currentPrice
+        self.lowestPrice = lowestPrice
+        self.highestPrice = highestPrice
+    }
 }

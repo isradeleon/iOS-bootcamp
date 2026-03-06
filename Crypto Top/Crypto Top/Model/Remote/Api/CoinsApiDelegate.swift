@@ -6,6 +6,10 @@
 //
 
 protocol CoinsApiDelegate {
-    func onCryptoListReady()
-    func onCoinDataReady()
+    func onCryptoTopReady(
+        firstCoin: Coin,
+        secondCoin: Coin,
+        thirdCoin: Coin
+    )
+    func onCoinDataReady(coin: Coin)
 }

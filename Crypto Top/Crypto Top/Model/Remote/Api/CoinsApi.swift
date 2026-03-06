@@ -21,7 +21,19 @@ struct CryptoApi {
             with: requestUrl,
             responseType: CryptoListData.self,
             onSuccess: { cryptoListData in
-                
+                if let result = cryptoListData.result {
+                    delegate?.onCryptoTopReady(
+                        firstCoin: Coin(
+                            name: result[0].symbol ?? ""
+                        ),
+                        secondCoin: Coin(
+                            name: result[1].symbol ?? ""
+                        ),
+                        thirdCoin: Coin(
+                            name: result[2].symbol ?? ""
+                        )
+                    )
+                }
             },
             onFailure: { print($0) })
     }
@@ -34,7 +46,14 @@ struct CryptoApi {
             with: requestUrl,
             responseType: CoinDetailsData.self,
             onSuccess: { coinDetails in
-                
+                delegate?.onCoinDataReady(
+                    coin: Coin(
+                        name: coinDetails.symbol ?? "",
+                        currentPrice: coinDetails.last ?? 0.0,
+                        lowestPrice: coinDetails.last ?? 0.0,
+                        highestPrice: coinDetails.last ?? 0.0
+                    )
+                )
             },
             onFailure: { print($0) })
     }
