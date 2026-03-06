@@ -17,23 +17,123 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SuW-52-XLd">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="SuW-52-XLd">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4M-XQ-X2p">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="759"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="379.66666666666669"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top 3 Cryptocurrencies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Swn-i9-E4Z">
-                                                <rect key="frame" x="107" y="369.33333333333331" width="179" height="20.333333333333314"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top 3 Cryptocurrencies" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Swn-i9-E4Z">
+                                                <rect key="frame" x="30" y="142" width="333" height="95.666666666666686"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow the top 3 cryptocurrencies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnD-Cx-3BH">
+                                                <rect key="frame" x="69.000000000000014" y="257.66666666666669" width="255.33333333333337" height="20.333333333333314"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="Swn-i9-E4Z" firstAttribute="centerX" secondItem="X4M-XQ-X2p" secondAttribute="centerX" id="7d1-Jl-T8l"/>
-                                            <constraint firstItem="Swn-i9-E4Z" firstAttribute="centerY" secondItem="X4M-XQ-X2p" secondAttribute="centerY" id="8qg-Av-b30"/>
+                                            <constraint firstAttribute="trailing" secondItem="Swn-i9-E4Z" secondAttribute="trailing" constant="30" id="AKy-xj-le4"/>
+                                            <constraint firstItem="fnD-Cx-3BH" firstAttribute="centerX" secondItem="X4M-XQ-X2p" secondAttribute="centerX" id="Bof-La-ixV"/>
+                                            <constraint firstItem="fnD-Cx-3BH" firstAttribute="top" secondItem="Swn-i9-E4Z" secondAttribute="bottom" constant="20" id="PDv-gQ-qwD"/>
+                                            <constraint firstItem="Swn-i9-E4Z" firstAttribute="centerY" secondItem="X4M-XQ-X2p" secondAttribute="centerY" id="UhG-gD-s4f"/>
+                                            <constraint firstItem="Swn-i9-E4Z" firstAttribute="leading" secondItem="X4M-XQ-X2p" secondAttribute="leading" constant="30" id="yg4-ob-bbL"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZO-YK-vck">
+                                        <rect key="frame" x="0.0" y="379.66666666666674" width="393" height="379.33333333333326"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uNo-Ag-FZy" userLabel="Cryptos Stack View">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="160"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AA0-6v-JcZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PZU-QX-9xz">
+                                                                <rect key="frame" x="0.0" y="0.0" width="124.33333333333333" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="bdy-kT-eDO"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crypto Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIi-Gs-mHl">
+                                                                <rect key="frame" x="134.33333333333334" y="14.999999999999998" width="124.33333333333334" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaT-Y1-Vk5">
+                                                                <rect key="frame" x="268.66666666666669" y="8" width="124.33333333333331" height="34.333333333333336"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Details"/>
+                                                                <connections>
+                                                                    <action selector="cryptoDetailsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tOa-uS-ENQ"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8ZF-Hk-xFi">
+                                                        <rect key="frame" x="0.0" y="55" width="393" height="50"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dtv-JR-VUz">
+                                                                <rect key="frame" x="0.0" y="0.0" width="124.33333333333333" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="NGc-CW-qo3"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crypto Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AY1-bE-WiB">
+                                                                <rect key="frame" x="134.33333333333334" y="14.999999999999998" width="124.33333333333334" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7s-0W-el1">
+                                                                <rect key="frame" x="268.66666666666669" y="8" width="124.33333333333331" height="34.333333333333336"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Details"/>
+                                                                <connections>
+                                                                    <action selector="cryptoDetailsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kh3-AI-KzL"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rUT-x3-Rcy">
+                                                        <rect key="frame" x="0.0" y="109.99999999999994" width="393" height="50"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="31E-0o-ltA">
+                                                                <rect key="frame" x="0.0" y="0.0" width="124.33333333333333" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="cwu-jL-C23"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crypto Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsS-XO-MJB">
+                                                                <rect key="frame" x="134.33333333333334" y="14.999999999999998" width="124.33333333333334" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJk-ta-5hJ">
+                                                                <rect key="frame" x="268.66666666666669" y="8" width="124.33333333333331" height="34.333333333333336"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Details"/>
+                                                                <connections>
+                                                                    <action selector="cryptoDetailsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zAX-PP-1N1"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="uNo-Ag-FZy" firstAttribute="leading" secondItem="OZO-YK-vck" secondAttribute="leading" id="Euf-hi-V00"/>
+                                            <constraint firstItem="uNo-Ag-FZy" firstAttribute="top" secondItem="OZO-YK-vck" secondAttribute="top" id="W9T-98-gH3"/>
+                                            <constraint firstAttribute="trailing" secondItem="uNo-Ag-FZy" secondAttribute="trailing" id="biA-HY-DgG"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -48,6 +148,14 @@
                             <constraint firstItem="SuW-52-XLd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mgb-Az-MZF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstCryptoImg" destination="PZU-QX-9xz" id="WWJ-jY-fvK"/>
+                        <outlet property="firstCyptoLabel" destination="VIi-Gs-mHl" id="9BW-4O-ycr"/>
+                        <outlet property="secondCryptoImg" destination="Dtv-JR-VUz" id="Wqx-Rl-R3K"/>
+                        <outlet property="secondCryptoLabel" destination="AY1-bE-WiB" id="tj4-mf-RYT"/>
+                        <outlet property="thirdCryptoImg" destination="31E-0o-ltA" id="mDi-BK-rv7"/>
+                        <outlet property="thirdCryptoLabel" destination="MsS-XO-MJB" id="Fyx-JG-UVh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -57,6 +165,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
