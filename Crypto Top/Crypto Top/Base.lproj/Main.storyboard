@@ -38,11 +38,11 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Swn-i9-E4Z" secondAttribute="trailing" constant="30" id="AKy-xj-le4"/>
+                                            <constraint firstItem="Swn-i9-E4Z" firstAttribute="centerX" secondItem="X4M-XQ-X2p" secondAttribute="centerX" id="8hM-zE-faw"/>
                                             <constraint firstItem="fnD-Cx-3BH" firstAttribute="centerX" secondItem="X4M-XQ-X2p" secondAttribute="centerX" id="Bof-La-ixV"/>
                                             <constraint firstItem="fnD-Cx-3BH" firstAttribute="top" secondItem="Swn-i9-E4Z" secondAttribute="bottom" constant="20" id="PDv-gQ-qwD"/>
+                                            <constraint firstItem="Swn-i9-E4Z" firstAttribute="leading" secondItem="X4M-XQ-X2p" secondAttribute="leading" constant="30" id="T97-me-sf0"/>
                                             <constraint firstItem="Swn-i9-E4Z" firstAttribute="centerY" secondItem="X4M-XQ-X2p" secondAttribute="centerY" id="UhG-gD-s4f"/>
-                                            <constraint firstItem="Swn-i9-E4Z" firstAttribute="leading" secondItem="X4M-XQ-X2p" secondAttribute="leading" constant="30" id="yg4-ob-bbL"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZO-YK-vck">
