@@ -9,11 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var firstCryptoImg: UIImageView!
-    @IBOutlet weak var secondCryptoImg: UIImageView!
-    @IBOutlet weak var thirdCryptoImg: UIImageView!
-    
-    @IBOutlet weak var firstCyptoLabel: UILabel!
+    @IBOutlet weak var firstCryptoLabel: UILabel!
     @IBOutlet weak var secondCryptoLabel: UILabel!
     @IBOutlet weak var thirdCryptoLabel: UILabel!
     
@@ -21,18 +17,37 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
+        if let path = Bundle.main.path(forResource: "apikeys", ofType: "plist") {
             let keys = NSDictionary(contentsOfFile: path)!
-            cryptoApi = CryptoApi(
-                apiKey: keys["CRYPTO_API_KEY"] as! String
+            setupCryptoApi(
+                key: keys["CRYPTO_API_KEY"] as! String
             )
         }
+    }
+    
+    func setupCryptoApi(key: String) {
+        cryptoApi = CryptoApi(apiKey: key)
+        cryptoApi?.delegate = self
+        cryptoApi?.fetchCryptoList()
     }
 
     @IBAction func cryptoDetailsPressed(_ sender: UIButton) {
         
     }
-    
-
 }
 
+extension ViewController: CryptoApiDelegate {
+    func onCryptoTopReady(
+        firstCoin: Coin, secondCoin: Coin, thirdCoin: Coin
+    ) {
+        DispatchQueue.main.async {
+            self.firstCryptoLabel.text = firstCoin.name
+            self.secondCryptoLabel.text = secondCoin.name
+            self.thirdCryptoLabel.text = thirdCoin.name
+        }
+    }
+    
+    func onCoinDataReady(coin: Coin) {
+        
+    }
+}
