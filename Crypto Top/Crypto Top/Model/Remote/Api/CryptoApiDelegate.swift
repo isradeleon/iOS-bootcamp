@@ -13,3 +13,13 @@ protocol CryptoApiDelegate {
     )
     func onCoinDataReady(coin: Coin)
 }
+
+//MARK: - Default protocol impl
+extension CryptoApiDelegate {
+    func onCryptoTopReady(
+        firstCoin: Coin,
+        secondCoin: Coin,
+        thirdCoin: Coin
+    ) {}
+    func onCoinDataReady(coin: Coin) {}
+}

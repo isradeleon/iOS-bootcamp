@@ -46,8 +46,4 @@ extension ViewController: CryptoApiDelegate {
             self.thirdCryptoLabel.text = thirdCoin.name
         }
     }
-    
-    func onCoinDataReady(coin: Coin) {
-        
-    }
 }
