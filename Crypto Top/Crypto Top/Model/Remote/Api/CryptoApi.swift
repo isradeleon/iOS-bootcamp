@@ -44,14 +44,15 @@ struct CryptoApi {
         
         client.performRequest(
             with: requestUrl,
-            responseType: CoinDetailsData.self,
-            onSuccess: { coinDetails in
+            responseType: CoinDetailsList.self,
+            onSuccess: { coinDetailsList in
+                let coinDetails = coinDetailsList.symbols[0]
                 delegate?.onCoinDataReady(
                     coin: Coin(
                         name: coinDetails.symbol ?? "",
-                        currentPrice: coinDetails.last ?? 0.0,
-                        lowestPrice: coinDetails.last ?? 0.0,
-                        highestPrice: coinDetails.last ?? 0.0
+                        currentPrice: Float(coinDetails.last!) ?? 0.0,
+                        lowestPrice: Float(coinDetails.lowest!) ?? 0.0,
+                        highestPrice: Float(coinDetails.highest!) ?? 0.0
                     )
                 )
             },

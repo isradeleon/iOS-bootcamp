@@ -14,6 +14,7 @@ class TopViewController: UIViewController {
     @IBOutlet weak var thirdCryptoLabel: UILabel!
     
     var cryptoApi: CryptoApi?
+    var lastPressedSymbol: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,20 @@ class TopViewController: UIViewController {
     }
 
     @IBAction func cryptoDetailsPressed(_ sender: UIButton) {
-        
+        lastPressedSymbol = switch sender.accessibilityIdentifier {
+            case "firstCoinBtn": firstCryptoLabel.text
+            case "secondCoinBtn": secondCryptoLabel.text
+            case "thirdCoinBtn": thirdCryptoLabel.text
+            default: "BTC"
+        }
+        performSegue(withIdentifier: "toCoinDetails", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCoinDetails" {
+            let destinationVC = segue.destination as! DetailsViewController
+            destinationVC.coinSymbol = lastPressedSymbol ?? "BTC"
+        }
     }
 }
 

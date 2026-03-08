@@ -7,7 +7,7 @@
 
 struct CoinDetailsData: Decodable {
     let symbol: String?
-    let last: Float?
-    let lowest: Float?
-    let highest: Float?
+    let last: String?
+    let lowest: String?
+    let highest: String?
 }

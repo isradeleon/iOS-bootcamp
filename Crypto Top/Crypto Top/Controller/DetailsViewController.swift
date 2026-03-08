@@ -54,8 +54,8 @@ extension DetailsViewController: CryptoApiDelegate {
         DispatchQueue.main.async {
             self.symbolLabel.text = coin.name
             self.priceLabel.text = coin.currentPrice.toMoneyFormat()
-            self.highestLabel.text = coin.highestPrice.toMoneyFormat()
-            self.lowestLabel.text = coin.lowestPrice.toMoneyFormat()
+            self.highestLabel.text = "Highest price:  \(coin.highestPrice.toMoneyFormat())"
+            self.lowestLabel.text = "Lowest price:  \(coin.lowestPrice.toMoneyFormat())"
         }
     }
 }
