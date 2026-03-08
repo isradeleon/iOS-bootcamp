@@ -23,3 +23,10 @@ struct Coin {
         self.highestPrice = highestPrice
     }
 }
+
+extension Float {
+    func toMoneyFormat(currency: String = "USD") -> String {
+        let formattedValue = String(format: "$ %.1f", self)
+        return "\(formattedValue) \(currency)"
+    }
+}

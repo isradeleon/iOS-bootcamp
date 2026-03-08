@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TopViewController: UIViewController {
 
     @IBOutlet weak var firstCryptoLabel: UILabel!
     @IBOutlet weak var secondCryptoLabel: UILabel!
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: CryptoApiDelegate {
+extension TopViewController: CryptoApiDelegate {
     func onCryptoTopReady(
         firstCoin: Coin, secondCoin: Coin, thirdCoin: Coin
     ) {
