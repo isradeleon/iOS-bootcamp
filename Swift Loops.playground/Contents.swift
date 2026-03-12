@@ -1,5 +1,8 @@
 import Foundation
 
+/**
+ FOR loops:
+ */
 // Arrays
 let fruits = ["Apple", "Pear", "Orange"]
 for fruit in fruits { print(fruit) }
@@ -33,3 +36,16 @@ print("---------------")
 
 // For loop without anonymous constant
 for _ in 1...5 { print("I'll be printed 5 times!") }
+
+print("---------------")
+
+/**
+ WHILE loops:
+ */
+var now = Date().timeIntervalSince1970
+let oneSecondPassed = now + 1
+
+while now < oneSecondPassed {
+    print("I'm running...")
+    now = Date().timeIntervalSince1970
+}
