@@ -15,6 +15,11 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCLTypingLabelText()
+    }
+    
+    // Animating label text through a pod library
+    func setupCLTypingLabelText() {
         titleLabel.text = "⚡️FlashChat"
     }
     
