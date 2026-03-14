@@ -18,13 +18,16 @@ class RegisterViewController: UIViewController {
         guard let email = emailTextfield.text, let password = passwordTextfield.text
         else { return }
         
-        guard email.isValidEmail && password.isValidPassword
+        guard email.isValidEmail
         else { return }
         
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error {
-                
+                print(error)
+                return
             }
+            
+            self.performSegue(withIdentifier: "RegisterToChat", sender: self)
         }
     }
 }

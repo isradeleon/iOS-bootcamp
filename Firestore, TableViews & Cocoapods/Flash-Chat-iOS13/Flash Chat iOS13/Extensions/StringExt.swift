@@ -16,6 +16,6 @@ extension String {
     }
     
     var isValidPassword: Bool {
-        !self.isEmpty && self.count >= 5
+        !self.isEmpty && self.count >= 6
     }
 }
