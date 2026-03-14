@@ -18,7 +18,7 @@ class RegisterViewController: UIViewController {
         guard let email = emailTextfield.text, let password = passwordTextfield.text
         else { return }
         
-        guard email.isValidEmail
+        guard email.isValidEmail && password.isValidPassword
         else { return }
         
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
