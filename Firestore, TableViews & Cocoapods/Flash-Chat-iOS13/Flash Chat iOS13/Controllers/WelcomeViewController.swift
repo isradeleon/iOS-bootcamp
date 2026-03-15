@@ -20,7 +20,7 @@ class WelcomeViewController: UIViewController {
     
     // Animating label text through a pod library
     func setupCLTypingLabelText() {
-        titleLabel.text = "⚡️FlashChat"
+        titleLabel.text = K.appName
     }
     
     // Manually animating the UILabel
