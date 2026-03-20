@@ -45,7 +45,7 @@ class ChatViewController: UIViewController {
 
 //MARK: - UITableView data source implementation
 /**
- This is basically the equivalent of a RecyclerView in Android.
+ This is essentially the equivalent of RecyclerViews in Android.
  */
 extension ChatViewController: UITableViewDataSource {
     func tableView(
@@ -58,7 +58,16 @@ extension ChatViewController: UITableViewDataSource {
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
-            cell.textLabel?.text = "\(indexPath.row)"
+            cell.textLabel?.text = messages[indexPath.row].body
             return cell
     }
 }
+
+/**
+ Handling row selection via tableView delegate:
+ */
+/*extension ChatViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedMessageRow = messages[indexPath.row]
+    }
+}*/
