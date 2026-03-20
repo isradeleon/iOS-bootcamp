@@ -16,6 +16,7 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCLTypingLabelText()
+        navigationItem.hidesBackButton = true
     }
     
     // Animating label text through a pod library

@@ -14,8 +14,12 @@ struct K {
     static let appName = "⚡️FlashChat"
     static let cellIdentifier = "ReusableCell"
     static let cellNibName = "MessageCell"
+    
     static let registerSegue = "RegisterToChat"
     static let loginSegue = "LoginToChat"
+    
+    static let userSegue = "LoadingToChat"
+    static let noUsersegue = "LoadingToLogin"
     
     struct BrandColors {
         static let purple = "BrandPurple"
