@@ -10,12 +10,19 @@ import UIKit
 import FirebaseAuth
 
 class ChatViewController: UIViewController {
+    
+    var messages: [Message] = [
+        Message(sender: "test@hey.com", body: "Hellooo"),
+        Message(sender: "uyuy@hey.com", body: "Hi"),
+        Message(sender: "test@hey.com", body: "What's going on")
+    ]
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextfield: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
         title = K.appName
         navigationItem.hidesBackButton = true
     }
@@ -34,4 +41,24 @@ class ChatViewController: UIViewController {
         }
     }
     
+}
+
+//MARK: - UITableView data source implementation
+/**
+ This is basically the equivalent of a RecyclerView in Android.
+ */
+extension ChatViewController: UITableViewDataSource {
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int) -> Int {
+            return messages.count
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
+            cell.textLabel?.text = "\(indexPath.row)"
+            return cell
+    }
 }
