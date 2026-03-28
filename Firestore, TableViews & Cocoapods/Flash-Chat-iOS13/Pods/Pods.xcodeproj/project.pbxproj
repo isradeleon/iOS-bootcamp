@@ -73,7 +73,7 @@
 		4C9C7BE4333CEC78651D887AA8B3389F /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
 		527744E565410718A49A1C5C5B0AA500 /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTitleBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
 		5B73B26746B056C50A2F7EDD1EADB3BE /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+Hierarchy.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
-		61E75DC80543DF7605A7EEFE89CE66DF /* Pods-Flash Chat iOS13 */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Flash Chat iOS13"; path = Pods_Flash_Chat_iOS13.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61E75DC80543DF7605A7EEFE89CE66DF /* Pods_Flash_Chat_iOS13.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flash_Chat_iOS13.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67263A4D7411DB410A8C347A0F4BA6EB /* IQPreviousNextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQPreviousNextView.swift; path = IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift; sourceTree = "<group>"; };
 		69301F4E598400CA4CB88505EAF858B1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		69CA5F9CA8F370A8AD11B13CE1DBD865 /* CLTypingLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CLTypingLabel-prefix.pch"; sourceTree = "<group>"; };
@@ -84,16 +84,16 @@
 		8A0A303B5990A3328AD59D7EDFCDBD1F /* IQUIViewController+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIViewController+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIViewController+Additions.swift"; sourceTree = "<group>"; };
 		8E0AE6D9F815E7948707800EE6A567A5 /* IQKeyboardManagerSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.debug.xcconfig; sourceTree = "<group>"; };
 		9CE1B6592A29ADBBC5FB53143C4D4955 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A4025F3B64DA1A57C153F197183C848B /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
-		A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManagerSwift; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A912741BDA04F14F5D091E6DD6B95F90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		AB9FA149A7590BF1F57B4CC6CF1915CC /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
 		AF80DFDC83DF114E03B6C469C198CF87 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIScrollView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
 		B37110EF9A990BF2AF206D9E1806C933 /* CLTypingLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CLTypingLabel-dummy.m"; sourceTree = "<group>"; };
 		BA73AEE873760A3EC5BF8CC0CA644F88 /* CLTypingLabel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CLTypingLabel.debug.xcconfig; sourceTree = "<group>"; };
 		BC3656EB186ED503E1A92DDC3FC4DD80 /* Pods-Flash Chat iOS13.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Flash Chat iOS13.modulemap"; sourceTree = "<group>"; };
-		CE8765B3053874E73AFDC78B5D6B4396 /* CLTypingLabel */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CLTypingLabel; path = CLTypingLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE8765B3053874E73AFDC78B5D6B4396 /* CLTypingLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CLTypingLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D50DB27001C6CB150388C484EC253FE1 /* Pods-Flash Chat iOS13-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Flash Chat iOS13-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D6CCE49947C375EBEAE6FF54F674CEAF /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
 		DD466468BB394A6E55327217AAA30700 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = IQKeyboardManager.bundle; path = IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle; sourceTree = "<group>"; };
@@ -145,7 +145,6 @@
 				DF62F2A8F8184686FC5111A132906B5D /* CLTypingLabel.swift */,
 				7930AC32DC9187558BF878855AC31C6F /* Support Files */,
 			);
-			name = CLTypingLabel;
 			path = CLTypingLabel;
 			sourceTree = "<group>";
 		};
@@ -182,7 +181,6 @@
 				780EF4DE1850FECBE06EE4EBC390DE26 /* Resources */,
 				C2F17149B7D535484F96F4444899A918 /* Support Files */,
 			);
-			name = IQKeyboardManagerSwift;
 			path = IQKeyboardManagerSwift;
 			sourceTree = "<group>";
 		};
@@ -252,9 +250,9 @@
 		C9B6C5BE094EAC3EC6258CAC29BFC4DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE8765B3053874E73AFDC78B5D6B4396 /* CLTypingLabel */,
-				A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */,
-				61E75DC80543DF7605A7EEFE89CE66DF /* Pods-Flash Chat iOS13 */,
+				CE8765B3053874E73AFDC78B5D6B4396 /* CLTypingLabel.framework */,
+				A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift.framework */,
+				61E75DC80543DF7605A7EEFE89CE66DF /* Pods_Flash_Chat_iOS13.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -332,7 +330,7 @@
 			);
 			name = CLTypingLabel;
 			productName = CLTypingLabel;
-			productReference = CE8765B3053874E73AFDC78B5D6B4396 /* CLTypingLabel */;
+			productReference = CE8765B3053874E73AFDC78B5D6B4396 /* CLTypingLabel.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7A900DA3F4D75939CD1871D9BBCE2CC3 /* Pods-Flash Chat iOS13 */ = {
@@ -352,7 +350,7 @@
 			);
 			name = "Pods-Flash Chat iOS13";
 			productName = Pods_Flash_Chat_iOS13;
-			productReference = 61E75DC80543DF7605A7EEFE89CE66DF /* Pods-Flash Chat iOS13 */;
+			productReference = 61E75DC80543DF7605A7EEFE89CE66DF /* Pods_Flash_Chat_iOS13.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */ = {
@@ -370,7 +368,7 @@
 			);
 			name = IQKeyboardManagerSwift;
 			productName = IQKeyboardManagerSwift;
-			productReference = A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */;
+			productReference = A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -391,8 +389,6 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			minimizedProjectReferenceProxies = 0;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = C9B6C5BE094EAC3EC6258CAC29BFC4DE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -507,7 +503,7 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -584,7 +580,7 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
