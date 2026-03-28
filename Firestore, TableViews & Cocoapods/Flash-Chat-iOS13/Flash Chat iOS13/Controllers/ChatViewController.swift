@@ -21,13 +21,14 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         prepareNavBar()
         prepareTableView()
-        loadMessages()
+        observeMessages()
     }
     
-    private func loadMessages() {
-        messages.removeAll()
-        db.collection(K.FStore.collectionName).getDocuments { snapshot, error in
+    private func observeMessages() {
+        db.collection(K.FStore.collectionName).addSnapshotListener { snapshot, error in
             if let documents = snapshot?.documents {
+                self.messages.removeAll()
+                
                 for doc in documents {
                     let data = doc.data()
                     guard let sender = data[K.FStore.senderField] as? String else { continue }
