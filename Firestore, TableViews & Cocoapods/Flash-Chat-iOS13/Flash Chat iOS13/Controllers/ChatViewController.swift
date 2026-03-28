@@ -22,9 +22,17 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
         title = K.appName
         navigationItem.hidesBackButton = true
+        prepareTableView()
+    }
+    
+    private func prepareTableView() {
+        tableView.dataSource = self
+        tableView.register(
+            UINib(nibName: K.cellNibName, bundle: nil),
+            forCellReuseIdentifier: K.cellIdentifier
+        )
     }
     
     @IBAction func sendPressed(_ sender: UIButton) {
@@ -50,15 +58,21 @@ class ChatViewController: UIViewController {
 extension ChatViewController: UITableViewDataSource {
     func tableView(
         _ tableView: UITableView,
-        numberOfRowsInSection section: Int) -> Int {
+        numberOfRowsInSection section: Int
+    ) -> Int {
             return messages.count
     }
     
     func tableView(
         _ tableView: UITableView,
-        cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
-            cell.textLabel?.text = messages[indexPath.row].body
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: K.cellIdentifier, for: indexPath
+            ) as! MessageCell
+            
+            cell.messageLabel?.text = messages[indexPath.row].body
+            
             return cell
     }
 }
