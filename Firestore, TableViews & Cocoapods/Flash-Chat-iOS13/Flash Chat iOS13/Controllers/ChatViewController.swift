@@ -41,11 +41,17 @@ class ChatViewController: UIViewController {
                     )
                 }
                 
-                DispatchQueue.main.async { self.tableView.reloadData() }
+                DispatchQueue.main.async { self.refreshChatState() }
             } else if error != nil {
                 print(error!)
             }
         }
+    }
+    
+    private func refreshChatState() {
+        tableView.reloadData()
+        let indexPath = IndexPath(row: messages.count-1, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .top, animated: false)
     }
     
     private func prepareNavBar() {
@@ -73,6 +79,10 @@ class ChatViewController: UIViewController {
             ) { (error) in
                 if let error = error {
                     print(error)
+                } else {
+                    DispatchQueue.main.async {
+                        self.messageTextfield.text = ""
+                    }
                 }
             }
         }
