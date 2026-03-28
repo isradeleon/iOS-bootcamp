@@ -25,7 +25,9 @@ class ChatViewController: UIViewController {
     }
     
     private func observeMessages() {
-        db.collection(K.FStore.collectionName).addSnapshotListener { snapshot, error in
+        db.collection(K.FStore.collectionName)
+            .order(by: K.FStore.dateField)
+            .addSnapshotListener { snapshot, error in
             if let documents = snapshot?.documents {
                 self.messages.removeAll()
                 
@@ -65,7 +67,8 @@ class ChatViewController: UIViewController {
             db.collection(K.FStore.collectionName).addDocument(
                 data: [
                     K.FStore.senderField: sender,
-                    K.FStore.bodyField: message
+                    K.FStore.bodyField: message,
+                    K.FStore.dateField: Date().timeIntervalSince1970
                 ]
             ) { (error) in
                 if let error = error {
