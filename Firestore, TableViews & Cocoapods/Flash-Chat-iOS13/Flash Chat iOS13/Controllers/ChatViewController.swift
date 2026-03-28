@@ -8,23 +8,46 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class ChatViewController: UIViewController {
-    
-    var messages: [Message] = [
-        Message(sender: "test@hey.com", body: "Hellooo"),
-        Message(sender: "uyuy@hey.com", body: "Hi"),
-        Message(sender: "test@hey.com", body: "What's going on")
-    ]
+    let db = Firestore.firestore()
+    var messages: [Message] = []
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextfield: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        prepareNavBar()
+        prepareTableView()
+        loadMessages()
+    }
+    
+    private func loadMessages() {
+        messages.removeAll()
+        db.collection(K.FStore.collectionName).getDocuments { snapshot, error in
+            if let documents = snapshot?.documents {
+                for doc in documents {
+                    let data = doc.data()
+                    guard let sender = data[K.FStore.senderField] as? String else { continue }
+                    guard let body = data[K.FStore.bodyField] as? String else { continue }
+                    
+                    self.messages.append(
+                        Message(sender: sender, body: body)
+                    )
+                }
+                
+                DispatchQueue.main.async { self.tableView.reloadData() }
+            } else if error != nil {
+                print(error!)
+            }
+        }
+    }
+    
+    private func prepareNavBar() {
         title = K.appName
         navigationItem.hidesBackButton = true
-        prepareTableView()
     }
     
     private func prepareTableView() {
@@ -36,7 +59,19 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func sendPressed(_ sender: UIButton) {
-        
+        if let message = messageTextfield.text,
+           let sender = Auth.auth().currentUser?.email {
+            db.collection(K.FStore.collectionName).addDocument(
+                data: [
+                    K.FStore.senderField: sender,
+                    K.FStore.bodyField: message
+                ]
+            ) { (error) in
+                if let error = error {
+                    print(error)
+                }
+            }
+        }
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
